@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado César Álvaro Polonio</title>
+    <style>
+        textarea {
+            width: 100%;
+        }
+
+        #encrypt {
+            background-color: rgb(105, 27, 27);
+            color: white;
+        }
+    </style>
+</head>
+
+<label for="text">Texto para cifrarlo:
+</label>
+<textarea id="text"></textarea>
+
+
+<label for="despl">Desplazamiento:</label>
+<input type="number" id="despl" min="0" max="25" value="3">
+<br>
+
+<button id="encrypt">Cifrar</button>
+
+<h2>Resultado del cifrado:</h2>
+<p id="result"></p>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+<script src="index.js"></script>
+</body>
+
+</html>
