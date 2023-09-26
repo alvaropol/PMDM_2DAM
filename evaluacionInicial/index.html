@@ -19,21 +19,33 @@
             <label for="tittleNew" class="form-label">Título de la noticia</label>
             <input type="text" class="form-control" required id="tittleNew"
                 placeholder="Escribe el título de su noticia">
+            <div class="invalid-feedback">
+                ¡Escribe un título!
+            </div>
         </div>
         <div class="mb-3">
             <label for="url" class="form-label">URL</label>
             <input type="text" class="form-control" required id="url" placeholder="Escribe la URL">
             <button type="button" id="createSlug" class="btn btn-success">SLUG</button>
+            <div class="invalid-feedback">
+                ¡Escribe una URL!
+            </div>
         </div>
         <div class=" mb-3">
             <label for="descriptionNew" class="form-label">Descripción de la noticia</label>
             <textarea class="form-control" required id="descriptionNew" rows="7"></textarea>
+            <div class="invalid-feedback">
+                ¡Escribe la descripción!
+            </div>
         </div>
 
         <div class="mb-3">
             <label for="captcha" class="form-label">Comprobador no soy robot:</label>
             <p id="captcha-question"></p>
             <input type="number" class="form-control" required id="captcha" placeholder="Escribe la respuesta">
+            <div class="invalid-feedback">
+                ¡Escribe el total!
+            </div>
         </div>
 
         <button type="button" id="save" class="btn btn-dark">Guardar noticia</button>

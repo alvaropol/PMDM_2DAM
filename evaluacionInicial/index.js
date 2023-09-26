@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     var correctAnswer = generateCaptcha();
 
+
     $(document).on('click', '#createSlug', function () {
 
         var slugUrl = createSlug($('#tittleNew').val());
@@ -10,12 +11,28 @@ $(document).ready(function () {
 
     $(document).on('click', '#save', function () {
 
+        var title = $('#tittleNew').val();
+        var url = $('#url').val();
+        var description = $('#descriptionNew')
+
+        if (title == '') {
+            $('#tittleNew').addClass('is-invalid');
+        }
+
+        if (url == '') {
+            $('#url').addClass('is-invalid');
+        }
+
+        if (description == '') {
+            $('#descriptionNew').addClass('is-invalid');
+        }
+
         var userAnswer = parseInt($('#captcha').val());
 
         if (userAnswer === correctAnswer) {
 
             alert("Respuesta correcta. Puedes guardar la noticia.");
-            $('#noticia').submit();
+
 
         } else {
 
