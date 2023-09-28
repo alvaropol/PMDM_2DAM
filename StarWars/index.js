@@ -17,11 +17,10 @@ $(document).ready(function () {
                 ${personaje.birth_year}
                 <br>
                 ${personaje.gender}
-            </p>
-            </div>
-            </div>`
+                </p>
+                </div>
+                </div>`
             $('#row1').append(template);
         });
     });
-
 });
