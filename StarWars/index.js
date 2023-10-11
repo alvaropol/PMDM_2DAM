@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-        url: 'https://swapi.dev/api/people',
+        url: 'https://swapi.dev/api/people/',
         type: 'GET'
     }).done(function (resp) {
         var listadoPersonajes = resp.results;
