@@ -1,0 +1,86 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.card {
+    height: 370px;
+    padding: 20px;
+    width: 500px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+
+}
+
+.card-background {
+    background-image: url('https://img.freepik.com/premium-photo/herb-spices-cooking-background_136595-562.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    border-radius: 100px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    width: 35%;
+    color: white;
+    height: 40px;
+    float: left;
+    background-color: white;
+}
+
+ul {
+    margin-left: 70px;
+}
+
+.icon {
+    color: gray;
+    text-align: center;
+
+}
+
+.send {
+    color: white;
+}
+
+.two {
+    background-color: blue;
+    padding-top: 4px;
+    margin-left: 35px;
+}
+
+.card-text {
+    font-weight: bold;
+    color: gray;
+    margin-left: 70px;
+
+}
+
+.card-title {
+    margin-left: -82px;
+}
+
+.text {
+    font-weight: bold;
+    color: gray;
+}
+
+h5 {
+    font-size: 24px;
+}
+
+.overlay-div {
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 145px;
+    width: 50%;
+    height: 10%;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    color: gray;
+    z-index: 1;
+    text-align: center;
+    padding: 7px;
+    font-weight: bold;
+}

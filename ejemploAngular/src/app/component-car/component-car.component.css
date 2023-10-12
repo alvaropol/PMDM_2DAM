@@ -5,28 +5,50 @@
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     padding: 5px;
-
-
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 p {
-    color: gray;
+    color: rgb(172, 160, 160);
     font-size: 14px;
+    font-weight: bold;
+}
+
+.number {
+    font-size: 24px;
+
+}
+
+.day {
+    font-size: 15px
 }
 
 .card-body {
     padding: 10px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.btn {
+.container {
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     font-size: 20px;
-    margin-bottom: 10px;
+    background-color: black;
+    width: 100%;
+    color: white;
+    height: 40px;
+    float: left;
 }
 
 .card-header {
     background: none;
     border-bottom: none;
 
+}
+
+img {
+    width: 330px;
 }
