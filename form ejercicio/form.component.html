@@ -1,0 +1,49 @@
+<form class="mt-5" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="firstName" class="form-label">First name</label>
+        <input [(ngModel)]="firstName" name="firstName" type="text" class="form-control" id="firstName">
+    </div>
+    <div class="mb-3">
+        <label for="lastName" class="form-label">Last name</label>
+        <input [(ngModel)]="lastName" name="lastName" type="text" class="form-control" id="lastName">
+    </div>
+    <div class="mb-3">
+        <label for="nif" class="form-label">NIF</label>
+        <input [(ngModel)]="nif" name="nif" type="text" class="form-control" id="nif">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input [(ngModel)]="email" name="email" type="email" class="form-control" id="email"
+            aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Phone number</label>
+        <input [(ngModel)]="phoneNumber" name="phoneNumber" type="text" class="form-control" maxlength="12" id="number">
+    </div>
+    <div class="mb-3">
+        <label for="sex" class="form-label">Sex</label>
+        <select [(ngModel)]="sex" name="sex" class="form-select" id="sex">
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="select2" class="form-label">
+            How did you find out about this page?</label>
+        <select [(ngModel)]="select2" name="select2" class="form-select" id="select2">
+            <option value="google">By Google</option>
+            <option value="friend">By a friend</option>
+            <option value="teacher">By my teacher</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input [(ngModel)]="password" name="password" type="password" class="form-control" id="password">
+    </div>
+    <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirm password</label>
+        <input [(ngModel)]="confirmPassword" name="confirmPassword" class="form-control" id="confirmPassword">
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>

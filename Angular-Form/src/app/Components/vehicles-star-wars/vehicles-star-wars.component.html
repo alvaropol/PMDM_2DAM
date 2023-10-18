@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicles</title>
+</head>
+
+<body>
+    <div class="card" *ngFor="let vehicle of vehicles">
+        <img [src]="getVehicleImageUrl(vehicle.url)" alt="{{ vehicle.name }} Image">
+        <div class="card-body">
+            <p class="card-text">Nombre: {{vehicle.name}}</p>
+        </div>
+    </div>
+</body>
+
+</html>
