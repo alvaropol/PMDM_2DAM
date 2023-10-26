@@ -1,0 +1,7 @@
+<div class="card" style="width: 18rem;">
+    <img [src]="getImage(pokemon.name)" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title" [textContent]="toUpperCase(pokemon.name)"></h5>
+    </div>
+    <button (click)="viewDetails()">VER DETALLES</button>
+</div>

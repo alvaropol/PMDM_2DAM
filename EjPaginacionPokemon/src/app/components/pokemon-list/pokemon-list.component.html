@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <app-pokemon-item *ngFor="let p of pokemonList" [pokemon]="p" class="col-3"
+            (clickPokemon)="openModal($event, pokemonModal)"></app-pokemon-item>
+    </div>
+</div>
+
+<ng-template #pokemonModal let-modal>
+    <div class=" modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{selectedPokemon?.name}}</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <img [src]="getImage(selectedPokemon?.name)" alt="Image Pokemon">
+            </div>
+        </form>
+    </div>
+</ng-template>

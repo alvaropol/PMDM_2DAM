@@ -15,7 +15,14 @@
             <div class="mb-3">
                 <img [src]="getImage(selectedAgent?.uuid)" alt="Image Agent">
             </div>
-            <p>Role: {{selectedAgent?.role?.displayName}}</p>
+            <p><span class="bold">Role:</span></p>
+            <p>{{selectedAgent?.role?.displayName}}</p>
+            <p><span class="bold">Description of role:</span></p>
+            <p>{{selectedAgent?.role?.description}}</p>
+            <p><span class="bold">Abilities</span></p>
+            <p>{{selectedAgent?.abilities?.[0]?.displayName}}, {{selectedAgent?.abilities?.[1]?.displayName}},
+                {{selectedAgent?.abilities?.[2]?.displayName}},{{selectedAgent?.abilities?.[3]?.displayName}},
+            </p>
         </form>
     </div>
 </ng-template>

@@ -6,3 +6,7 @@ img {
     padding: 50px;
     margin-left: 50px;
 }
+
+.bold {
+    font-weight: bold;
+}
