@@ -1,0 +1,59 @@
+<p>SALESIANOS DAM: Students</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Fullname</th>
+            <th scope="col">Age</th>name
+            <th scope="col">Sex</th>
+            <th scope="col">Subjects</th>
+            <th scope="col">Application type</th>
+            <th scope="col">Paid</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentList">
+            <th scope="row">{{student.id}}</th>
+            <td>{{student.name}} {{student.lastname}}</td>
+            <td>{{student.age}} years old</td>
+            <td>{{student.sex}}</td>
+            <td>
+                <span *ngFor="let subject of student.subjects" class="badge text-bg-primary me-2">{{subject.name}}
+                    ({{subject.hours}})</span>
+            </td>
+            <td>
+                <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div [class]="getProgressBarClasses(student)" [style]="'width: '+getProgressBar(student)+'%'">
+                    </div>
+                </div>
+            </td>
+            <td>{{getPaidString(student)}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<mat-table [dataSource]="studentList">
+    <!-- User name Definition -->
+    <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef> User name </mat-header-cell>
+        <mat-cell *matCellDef="let s"> {{s.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Age Definition -->
+    <ng-container matColumnDef="age">
+        <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.age}} </mat-cell>
+    </ng-container>
+
+    <!-- Title Definition -->
+    <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.title}} </mat-cell>
+    </ng-container>
+
+    <!-- Header and Row Declarations -->
+    <mat-header-row *matHeaderRowDef="['username', 'age', 'title']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['username', 'age', 'title']"></mat-row>
+</mat-table>

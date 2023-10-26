@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <app-agent-item *ngFor="let a of agentList" [agent]="a" class="col-3"
+            (clickAgent)="openModal($event, agentModal)"></app-agent-item>
+    </div>
+</div>
+
+<ng-template #agentModal let-modal>
+    <div class=" modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{selectedAgent?.displayName}}</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <img [src]="getImage(selectedAgent?.uuid)" alt="Image Agent">
+            </div>
+            <p>Role: {{selectedAgent?.role?.displayName}}</p>
+        </form>
+    </div>
+</ng-template>

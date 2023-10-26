@@ -1,0 +1,24 @@
+.row {
+    margin-top: 20px;
+}
+
+.card {
+    margin-right: 20px;
+    margin-top: 20px;
+    background-color: rgb(234, 70, 70);
+    color: white;
+}
+
+a {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+a:hover {
+    background-color: rgb(47, 45, 45);
+}
+
+button {
+    font-weight: bold;
+}

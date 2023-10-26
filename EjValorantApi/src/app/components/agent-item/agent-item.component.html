@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+    <img [src]="getImage(agent.uuid)" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{agent.displayName}}</h5>
+        <p class="card-text">{{agent.description}}</p>
+    </div>
+    <button (click)="viewDetails()">VER DETALLES</button>
+</div>
