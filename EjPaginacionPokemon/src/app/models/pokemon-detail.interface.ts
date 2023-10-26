@@ -1,7 +1,3 @@
-export interface PokemonDetailResponse {
-    data: PokemonDetail;
-}
-
 export interface PokemonDetail {
     abilities: Ability[];
     base_experience: number;

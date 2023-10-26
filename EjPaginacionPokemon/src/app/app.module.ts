@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonItemComponent } from './components/pokemon-item/pokemon-item.component'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PokemonItemComponent } from './components/pokemon-item/pokemon-item.com
   imports: [
     BrowserModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

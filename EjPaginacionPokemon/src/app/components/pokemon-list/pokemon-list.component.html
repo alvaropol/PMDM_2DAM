@@ -1,13 +1,21 @@
+<div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>{{currentPage}} de {{getTotalPages()}}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === getTotalPages()">Siguiente</button>
+</div>
+
+
 <div class="container">
     <div class="row">
-        <app-pokemon-item *ngFor="let p of pokemonList" [pokemon]="p" class="col-3"
-            (clickPokemon)="openModal($event, pokemonModal)"></app-pokemon-item>
+        <app-pokemon-item *ngFor="let p of pokemonList | paginate: { itemsPerPage: 20, currentPage: currentPage }"
+            [pokemon]="p" class="col-3" (clickPokemon)="openModal($event, pokemonModal)"></app-pokemon-item>
     </div>
 </div>
 
 <ng-template #pokemonModal let-modal>
     <div class=" modal-header">
-        <h4 class="modal-title" id="modal-basic-title">{{selectedPokemon?.name}}</h4>
+        <h4 class="modal-title" id="modal-basic-title" [textContent]="toUpperCase(selectedPokemon?.name)"></h4>
+        <h4 class="modal-title" id="modal-basic-title"> -{{selectedPokemon?.id}}</h4>
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
@@ -15,6 +23,12 @@
             <div class="mb-3">
                 <img [src]="getImage(selectedPokemon?.name)" alt="Image Pokemon">
             </div>
+            <p><span class="bold">Base Experience:</span></p>
+            <p>{{selectedPokemon?.base_experience}}</p>
+            <p><span class="bold">Height:</span></p>
+            <p>{{selectedPokemon?.height}}dm</p>
+            <p><span class="bold">Weight:</span></p>
+            <p>{{selectedPokemon?.weight}}hg</p>
         </form>
     </div>
 </ng-template>
