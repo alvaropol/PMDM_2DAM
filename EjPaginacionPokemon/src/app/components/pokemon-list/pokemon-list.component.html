@@ -1,14 +1,11 @@
-<div class="pagination">
-    <button (click)="previousPage()" [disabled]="currentPage === 1">Anterior</button>
-    <span>{{currentPage}} de {{getTotalPages()}}</span>
-    <button (click)="nextPage()" [disabled]="currentPage === getTotalPages()">Siguiente</button>
-</div>
-
+<ngb-pagination [collectionSize]="1292" [pageSize]="20" [maxSize]="5" [rotate]="true" [(page)]="currentPage"
+    (pageChange)="loadNewPage()" class="align-self-centers" aria-label="Default pagination">
+</ngb-pagination>
 
 <div class="container">
     <div class="row">
-        <app-pokemon-item *ngFor="let p of pokemonList | paginate: { itemsPerPage: 20, currentPage: currentPage }"
-            [pokemon]="p" class="col-3" (clickPokemon)="openModal($event, pokemonModal)"></app-pokemon-item>
+        <app-pokemon-item *ngFor="let p of pokemonList" [pokemon]="p" class="col-3"
+            (clickPokemon)="openModal($event, pokemonModal)"></app-pokemon-item>
     </div>
 </div>
 
