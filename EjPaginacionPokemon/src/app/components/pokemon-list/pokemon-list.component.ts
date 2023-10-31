@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { debounceTime, switchMap, startWith, map } from 'rxjs/operators';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { Pokemon } from '../../models/pokemon-list.interface';
@@ -15,7 +13,6 @@ export class PokemonListComponent implements OnInit {
   @ViewChild('auto') autocomplete: any;
 
   pokemonList: Pokemon[] = [];
-  pokemonCtrl = new FormControl();
   filteredPokemons: Pokemon[] = [];
   selectedPokemon: PokemonDetail | undefined;
   currentPage = 1;
@@ -24,21 +21,8 @@ export class PokemonListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadNewPage();
-    this.setupAutocomplete();
   }
 
-  setupAutocomplete() {
-    this.pokemonCtrl.valueChanges
-      .pipe(
-        startWith(''),
-        debounceTime(300),
-        switchMap((value) => this.pokemonService.getPokemonList(value)),
-        map((response) => response.results)
-      )
-      .subscribe((results) => {
-        this.filteredPokemons = results;
-      });
-  }
 
   openModal(id: number, content: any) {
     this.pokemonService.getPokemonById(id).subscribe(resp => {

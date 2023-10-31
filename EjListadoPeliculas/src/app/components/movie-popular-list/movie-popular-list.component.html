@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>POPULAR MOVIES</h1>
+    <ul class="list-group list-group-horizontal position-relative overflow-auto w-100 mt-5">
+        <app-movie-item *ngFor="let m of moviePopularList" [movie]="m" class="col-3"
+            (clickMovie)="openModal($event, movieModal)"></app-movie-item>
+    </ul>
+</div>
+
+
+<ng-template #movieModal let-modal>
+    <div class=" modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{selectedMovie?.title}}-{{selectedMovie?.id}}</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <img [src]="getImage(selectedMovie?.poster_path)" alt="Image Movie">
+            </div>
+            <p><span class="bold">Release date:</span></p>
+            <p>{{selectedMovie?.release_date}}</p>
+            <p><span class="bold">Popularity:</span></p>
+            <p>{{selectedMovie?.popularity}}</p>
+            <p><span class="bold">Runtime:</span></p>
+            <p>{{selectedMovie?.runtime}}</p>
+        </form>
+    </div>
+</ng-template>

@@ -1,0 +1,13 @@
+img {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+}

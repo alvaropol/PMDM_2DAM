@@ -1,0 +1,7 @@
+<div class="card">
+    <img [src]="getImage(movie.poster_path)" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title" [textContent]="toUpperCase(movie.title)"></h5>
+    </div>
+    <button (click)="viewDetails()">VER DETALLES</button>
+</div>
