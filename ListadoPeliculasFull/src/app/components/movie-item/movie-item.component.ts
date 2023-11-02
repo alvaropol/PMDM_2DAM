@@ -15,9 +15,6 @@ export class MovieItemComponent {
     return `https://image.tmdb.org/t/p/w500${poster_path}`;
   }
 
-  viewDetails() {
-    this.clickMovie.emit(this.movie.id);
-  }
 
   toUpperCase(title: String) {
     title = title[0].toUpperCase() + title.substring(1);
