@@ -8,20 +8,20 @@
 
 <ng-template #movieModal let-modal>
     <div class=" modal-header">
-        <h4 class="modal-title" id="modal-basic-title">{{selectedMovie?.title}}-{{selectedMovie?.id}}</h4>
+        <h4 class="modal-title" id="modal-basic-title">{{selectedMovie.title}}-{{selectedMovie.id}}</h4>
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
         <form>
             <div class="mb-3">
-                <img [src]="getImage(selectedMovie?.poster_path)" alt="Image Pokemon">
+                <img [src]="getImage(selectedMovie.poster_path)" alt="Image Pokemon">
             </div>
             <p><span class="bold">Release date:</span></p>
-            <p>{{selectedMovie?.release_date}}</p>
+            <p>{{selectedMovie.release_date}}</p>
             <p><span class="bold">Popularity:</span></p>
-            <p>{{selectedMovie?.popularity}}</p>
+            <p>{{selectedMovie.popularity}}</p>
             <p><span class="bold">Runtime:</span></p>
-            <p>{{selectedMovie?.runtime}}</p>
+            <p>{{selectedMovie.runtime}}</p>
         </form>
     </div>
 </ng-template>

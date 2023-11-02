@@ -9,10 +9,10 @@ import { MovieTopRated } from 'src/models/TopRatedList.interface';
   templateUrl: './top-rated-movie.component.html',
   styleUrls: ['./top-rated-movie.component.css']
 })
-export class TopRatedMovieComponent {
+export class TopRatedMovieComponent implements OnInit {
 
   movieTopRatedList: MovieTopRated[] = [];
-  selectedMovie: MovieDetail | undefined;
+  selectedMovie!: MovieDetail;
 
   constructor(private movieService: MovieService, private modalService: NgbModal) { };
 

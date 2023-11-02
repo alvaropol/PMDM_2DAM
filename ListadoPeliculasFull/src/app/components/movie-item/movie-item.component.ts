@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Movie } from 'src/models/MoviePopularList.interface';
-import { MovieTopRated } from 'src/models/TopRatedList.interface';
+import { MoviePopular } from 'src/app/models/movie-popular-list.interface';
 
 @Component({
   selector: 'app-movie-item',
@@ -9,7 +8,7 @@ import { MovieTopRated } from 'src/models/TopRatedList.interface';
 })
 export class MovieItemComponent {
 
-  @Input() movie!: Movie | MovieTopRated;
+  @Input() movie!: MoviePopular;
   @Output() clickMovie = new EventEmitter<number>();
 
   getImage(poster_path: String | undefined) {
@@ -24,5 +23,4 @@ export class MovieItemComponent {
     title = title[0].toUpperCase() + title.substring(1);
     return title;
   }
-
 }

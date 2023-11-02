@@ -1,0 +1,8 @@
+<div class="card">
+    <img [src]="getImage(movie.poster_path)" class="card-img-top" alt="Movie image">
+    <div class="card-body">
+        <h5 class="card-title" [textContent]="toUpperCase(movie.title)"></h5>
+        <p>{{movie.vote_average}} ⭐</p>
+    </div>
+    <button (click)="viewDetails()">VER DETALLES</button>
+</div>

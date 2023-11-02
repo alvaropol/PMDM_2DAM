@@ -1,0 +1,6 @@
+<div class="container">
+    <h1>POPULAR MOVIES</h1>
+    <div class="row col-12">
+        <app-movie-item *ngFor="let m of moviePopularList" [movie]="m" class="col-3"></app-movie-item>
+    </div>
+</div>

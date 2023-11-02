@@ -12,7 +12,7 @@ import { Movie } from 'src/models/MoviePopularList.interface';
 export class MoviePopularListComponent implements OnInit {
 
   moviePopularList: Movie[] = [];
-  selectedMovie: MovieDetail | undefined;
+  selectedMovie!: MovieDetail;
 
   constructor(private movieService: MovieService, private modalService: NgbModal) { };
 
