@@ -1,0 +1,46 @@
+body {
+    background-color: #edf1f5;
+    margin-top: 20px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: 0;
+    margin-bottom: 30px;
+}
+
+.card .card-subtitle {
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #8898aa;
+}
+
+img {
+    width: 90%;
+    padding: 40px;
+}
+
+.trailer {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.videos {
+    padding: 30px;
+    margin-top: 0;
+}
+
+.card-body {
+    margin-bottom: 0;
+}
+
+.container2 {
+    margin-top: 30px;
+}

@@ -7,20 +7,33 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
 import { HomePageComponent } from './ui/home-page/home-page.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DetailpageComponent } from './ui/detailpage/detailpage.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
     HomePageComponent,
-    MovieItemComponent
+    MovieItemComponent,
+    DetailpageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 10,
+      innerStrokeWidth: 0,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
