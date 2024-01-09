@@ -15,7 +15,7 @@ export class DetailpageComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
   idMovie: number = 0;
   selectedMovie!: MovieDetail;
-  trailersOfMovie: Trailer[] = [];
+  trailerOfMovie: Trailer | undefined;
 
   constructor(private movieService: MovieService, private sanitazer: DomSanitizer) {
     this.idMovie = this.route.snapshot.params['id'];
@@ -25,7 +25,7 @@ export class DetailpageComponent implements OnInit {
     this.movieService.getMovieById(this.idMovie).subscribe(resp => {
       this.selectedMovie = resp;
       this.movieService.getListVideoByIdMovie(this.idMovie).subscribe(trailers => {
-        this.trailersOfMovie = trailers.results;
+        this.trailerOfMovie = trailers.results[0];
       });
     });
   }
@@ -41,11 +41,11 @@ export class DetailpageComponent implements OnInit {
       return "No"
   }
 
-  getTrailerURL(video: Trailer) {
-    if (video.site == 'YouTube') {
+  getTrailerURL(video: Trailer | undefined) {
+    if (video?.site == 'YouTube') {
       return this.sanitazer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${video.key}`);
     } else {
-      return this.sanitazer.bypassSecurityTrustResourceUrl(`https://player.vimeo.com/video/${video.key}`);
+      return this.sanitazer.bypassSecurityTrustResourceUrl(`https://player.vimeo.com/video/${video?.key}`);
     }
   }
 
