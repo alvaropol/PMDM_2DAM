@@ -92,7 +92,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       ),
                       onPressed: () => _incrementScore(1, 1),
                       child: const Text(
-                        '1 point',
+                        '+1',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
@@ -104,7 +104,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       ),
                       onPressed: () => _incrementScore(1, 2),
                       child: const Text(
-                        '2 points',
+                        '+2',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
@@ -116,7 +116,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       ),
                       onPressed: () => _incrementScore(1, 3),
                       child: const Text(
-                        '3 points',
+                        '+3',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
@@ -163,7 +163,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       ),
                       onPressed: () => _incrementScore(2, 1),
                       child: const Text(
-                        '1 point',
+                        '+1',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
@@ -175,7 +175,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       ),
                       onPressed: () => _incrementScore(2, 2),
                       child: const Text(
-                        '2 points',
+                        '+2',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
@@ -187,7 +187,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       ),
                       onPressed: () => _incrementScore(2, 3),
                       child: const Text(
-                        '3 points',
+                        '+3',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
@@ -216,7 +216,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                     child: Image.network(
                       carouselImages[index],
                       width: 200,
-                      height: 200,
+                      height: 180,
                     ),
                   );
                 },
