@@ -27,14 +27,13 @@ class RentScreen extends StatelessWidget {
             ),
             IconButton(
               icon: const Icon(Icons.search, color: Colors.white),
-              onPressed: () {
-                // Acción al presionar el ícono de búsqueda
-              },
+              onPressed: () {},
             ),
           ],
         ),
       ),
       body: ListView(
+        scrollDirection: Axis.vertical,
         children: const [
           CardCar(
             nombre: 'Seat Ibiza - Diesel',

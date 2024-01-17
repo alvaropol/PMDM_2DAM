@@ -34,13 +34,12 @@ class CarDetailScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             Image.network(
               imagen,
-              width: 200,
-              height: 150,
+              width: 100,
+              height: 300,
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 16),
@@ -56,7 +55,7 @@ class CarDetailScreen extends StatelessWidget {
             Row(
               children: [
                 Image.asset(
-                  '../assets/icons/gears_cars.png',
+                  'assets/icons/gears_cars.png',
                   width: 30,
                 ),
                 Text(

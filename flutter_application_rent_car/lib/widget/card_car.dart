@@ -36,6 +36,7 @@ class CardCar extends StatelessWidget {
         child: Column(
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
                   'El más barato, Buena puntuación',
@@ -43,12 +44,11 @@ class CardCar extends StatelessWidget {
                       color: Color.fromARGB(255, 131, 216, 134),
                       fontWeight: FontWeight.bold),
                 ),
-                Expanded(
-                    child: Text(
+                Text(
                   '$ofertas ofertas',
                   style: const TextStyle(color: Colors.grey),
                   textAlign: TextAlign.end,
-                )),
+                ),
               ],
             ),
             const SizedBox(height: 30),
@@ -57,21 +57,13 @@ class CardCar extends StatelessWidget {
               width: 200,
             ),
             const SizedBox(height: 10),
-            Row(
-              children: [
-                Text(
-                  tamanyo,
-                  style: const TextStyle(fontSize: 20),
-                )
-              ],
+            Text(
+              tamanyo,
+              style: const TextStyle(fontSize: 20),
             ),
-            Row(
-              children: [
-                Text(
-                  '$puertas puertas · $nombre',
-                  style: const TextStyle(color: Colors.grey),
-                )
-              ],
+            Text(
+              '$puertas puertas · $nombre',
+              style: const TextStyle(color: Colors.grey),
             ),
             const SizedBox(
               height: 5,
@@ -79,7 +71,7 @@ class CardCar extends StatelessWidget {
             Row(
               children: [
                 Image.asset(
-                  '../assets/icons/gears_cars.png',
+                  'assets/icons/gears_cars.png',
                   width: 30,
                 ),
                 Text(
@@ -123,12 +115,12 @@ class CardCar extends StatelessWidget {
             ),
             const Divider(color: Colors.grey),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   '$precio USD',
                   style: const TextStyle(color: Colors.blue),
                 ),
-                const Spacer(),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
