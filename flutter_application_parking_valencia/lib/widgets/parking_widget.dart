@@ -33,34 +33,39 @@ class _ParkingWidgetState extends State<ParkingWidget> {
         isLoading = false;
       });
     } else {
-      throw Exception('Failed to load Pokémon list');
+      throw Exception('Failed to load Parking list');
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        children: [
-          ListTile(
-            leading: const Icon(Icons.arrow_drop_down_circle),
-            title: const Text('Card title 1'),
-            subtitle: Text(
-              'Secondary Text',
-              style: TextStyle(color: Colors.black.withOpacity(0.6)),
+    return ListView.builder(
+        itemCount: parkingList!.length,
+        itemBuilder: (context, index) {
+          final parking = parkingList![index];
+          return Card(
+            child: Column(
+              children: [
+                ListTile(
+                  leading: const Icon(Icons.arrow_drop_down_circle),
+                  title: Text(parking.nombre ?? ''),
+                  subtitle: Text(
+                    'Secondary Text',
+                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    'Greyhound divisively hello coldly wonderfully marginally far upon excluding.',
+                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  ),
+                ),
+                Image.asset('assets/card-sample-image.jpg'),
+                Image.asset('assets/card-sample-image-2.jpg'),
+              ],
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Greyhound divisively hello coldly wonderfully marginally far upon excluding.',
-              style: TextStyle(color: Colors.black.withOpacity(0.6)),
-            ),
-          ),
-          Image.asset('assets/card-sample-image.jpg'),
-          Image.asset('assets/card-sample-image-2.jpg'),
-        ],
-      ),
-    );
+          );
+        });
   }
 }
