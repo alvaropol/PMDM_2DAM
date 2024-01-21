@@ -1,29 +1,20 @@
 import 'dart:convert';
 
 import 'geometry.dart';
-import 'properties.dart';
 
 class GeoShape {
   String? type;
   Geometry? geometry;
-  Properties? properties;
 
-  GeoShape({this.type, this.geometry, this.properties});
+  GeoShape({this.type, this.geometry});
 
   factory GeoShape.fromMap(Map<String, dynamic> data) => GeoShape(
         type: data['type'] as String?,
-        geometry: data['geometry'] == null
-            ? null
-            : Geometry.fromMap(data['geometry'] as Map<String, dynamic>),
-        properties: data['properties'] == null
-            ? null
-            : Properties.fromMap(data['properties'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toMap() => {
         'type': type,
         'geometry': geometry?.toMap(),
-        'properties': properties?.toMap(),
       };
 
   /// `dart:convert`

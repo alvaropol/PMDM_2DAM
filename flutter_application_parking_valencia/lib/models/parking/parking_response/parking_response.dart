@@ -8,14 +8,12 @@ class ParkingResponse {
 
   ParkingResponse({this.totalCount, this.results});
 
-  factory ParkingResponse.fromMap(Map<String, dynamic> data) {
-    return ParkingResponse(
-      totalCount: data['total_count'] as int?,
-      results: (data['results'] as List<dynamic>?)
-          ?.map((e) => Result.fromMap(e as Map<String, dynamic>))
-          .toList(),
-    );
-  }
+  factory ParkingResponse.fromMap(Map<String, dynamic> data) => ParkingResponse(
+        totalCount: data['total_count'] as int?,
+        results: (data['results'] as List<dynamic>?)
+            ?.map((e) => Result.fromMap(e as Map<String, dynamic>))
+            .toList(),
+      );
 
   Map<String, dynamic> toMap() => {
         'total_count': totalCount,
