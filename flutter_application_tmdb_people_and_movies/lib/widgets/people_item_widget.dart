@@ -26,7 +26,8 @@ class PeopleItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => PeopleDetailScreen(actorId: actor.id!),
+            builder: (context) =>
+                PeopleDetailScreen(name: actor.name!, id: actor.id!),
           ),
         );
       },
