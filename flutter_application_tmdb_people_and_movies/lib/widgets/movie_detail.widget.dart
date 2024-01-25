@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_tmdb_people_and_movies/models/movies/movie_detail_response/movie_detail_response.dart';
+import 'package:flutter_application_tmdb_people_and_movies/models/movies/trailer_list_response/trailer_list_response.dart';
 import 'package:flutter_application_tmdb_people_and_movies/widgets/movie_detail_item.dart';
 import 'package:http/http.dart' as http;
 import 'package:skeletonizer/skeletonizer.dart';
@@ -11,7 +12,18 @@ Future<MovieDetailResponse> fetchMovieDetails(int id) async {
     final toReturn = MovieDetailResponse.fromJson(response.body);
     return toReturn;
   } else {
-    throw Exception('Failed to load album');
+    throw Exception('Failed to load movie details');
+  }
+}
+
+Future<TrailerListResponse> fetchTrailerList(int id) async {
+  final response = await http.get(Uri.parse(
+      'https://api.themoviedb.org/3/movie/$id/videos?api_key=b415c3bcbd59bc1b962dd0ac536ee99e'));
+  if (response.statusCode == 200) {
+    final toReturn = TrailerListResponse.fromJson(response.body);
+    return toReturn;
+  } else {
+    throw Exception('Failed to load trailer list');
   }
 }
 
@@ -24,11 +36,13 @@ class MovieDetailsWidget extends StatefulWidget {
 
 class _MovieDetailsWidgetState extends State<MovieDetailsWidget> {
   late Future<MovieDetailResponse> movieDetailResponse;
+  late Future<TrailerListResponse> trailerListResponse;
 
   @override
   void initState() {
     super.initState();
     movieDetailResponse = fetchMovieDetails(widget.id);
+    trailerListResponse = fetchTrailerList(widget.id);
   }
 
   @override

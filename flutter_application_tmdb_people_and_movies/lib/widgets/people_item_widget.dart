@@ -14,7 +14,7 @@ class PeopleItem extends StatelessWidget {
         return 0.2;
       } else if (actor.popularity! > 20.0 && actor.popularity! <= 50.0) {
         return 0.5;
-      } else if (actor.popularity! > 50.0 && actor.popularity! <= 100.0) {
+      } else if (actor.popularity! > 50.0 || actor.popularity! > 100.0) {
         return 1;
       } else {
         return 0;

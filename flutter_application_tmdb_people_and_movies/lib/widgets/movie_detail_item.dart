@@ -7,61 +7,80 @@ class MovieDetailItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
-        image: DecorationImage(
-          image: NetworkImage(
-            'https://image.tmdb.org/t/p/w500/${movie.backdropPath!}',
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        DecoratedBox(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(
+                'https://image.tmdb.org/t/p/w500/${movie.backdropPath!}',
+              ),
+              fit: BoxFit.cover,
+            ),
           ),
-          fit: BoxFit.cover,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.6),
+            ),
+          ),
         ),
-      ),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.0),
-          color: Colors.black.withOpacity(0.6),
-        ),
-        child: Padding(
+        Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Stack(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                children: [
-                  ListTile(
-                    title: Text(
-                      movie.title!,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    subtitle: Text(
-                      'Description: ${movie.overview}',
-                      style: const TextStyle(color: Colors.white),
-                    ),
+              ListTile(
+                title: Text(
+                  movie.title!,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
-                  Text(
-                    'Runtime of the movie: ${movie.runtime} min',
-                    style: const TextStyle(color: Colors.white),
+                ),
+                subtitle: Text(
+                  'Description: ${movie.overview}',
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                title: const Text(
+                  'Runtime of the movie:',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
-                  Text(
-                    'Revenue: ${movie.revenue} USD',
-                    style: const TextStyle(color: Colors.white),
+                ),
+                subtitle: Text(
+                  '${movie.runtime} min',
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                title: const Text(
+                  'Revenue:',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      'Release date -> ${movie.releaseDate}',
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ],
+                ),
+                subtitle: Text(
+                  '${movie.revenue} USD',
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  'Release date -> ${movie.releaseDate}',
+                  style: const TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
             ],
           ),
         ),
-      ),
+      ],
     );
   }
 }

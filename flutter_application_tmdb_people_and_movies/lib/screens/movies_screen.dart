@@ -34,7 +34,10 @@ class _MoviesScreenState extends State<MoviesScreen> {
       child: ListView.builder(
         itemCount: widget.movieList.length,
         itemBuilder: (context, index) {
-          return MovieItem(movie: widget.movieList[index]);
+          return MovieItem(
+            movie: widget.movieList[index],
+            index: index,
+          );
         },
       ),
     );
