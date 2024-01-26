@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_tmdb_people_and_movies/widgets/movie_detail.widget.dart';
+import 'package:flutter_application_tmdb_people_and_movies/widgets/movie_list_trailers_widget.dart';
 
 class MovieDetailScreen extends StatelessWidget {
   final int movieId;
@@ -13,7 +14,12 @@ class MovieDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Detail of $title'),
       ),
-      body: MovieDetailsWidget(id: movieId),
+      body: Column(
+        children: [
+          MovieDetailsWidget(id: movieId),
+          MovieTrailersListWidget(movieId: movieId)
+        ],
+      ),
     );
   }
 }
